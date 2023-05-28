@@ -11,7 +11,7 @@ from easymms.models.asr import ASRModel
 
 
 class TestASR(TestCase):
-    asr = ASRModel('../models/mms1b_fl102.pt')
+    asr = ASRModel('../models_dir/mms1b_fl102.pt')
     eng_files = ['../assets/eng_1.mp3', '../assets/eng_2.flac']
     ara_files = ['../assets/ara_1.ogg']
 

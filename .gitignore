@@ -144,4 +144,4 @@ _examples
 mtests
 # vscode
 .vscode
-models
+models_dir
