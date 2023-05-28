@@ -1,0 +1,6 @@
+fairseq~=0.12.2
+pydub~=0.25.1
+platformdirs==3.5.1
+editdistance
+sox
+dataclasses
