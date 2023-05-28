@@ -74,6 +74,6 @@ plugins:
             md_in_html: true
             filters:
               - "!^_"
-      watch:
-        - easymms/
+watch:
+  - easymms/
 
