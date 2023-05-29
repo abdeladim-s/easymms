@@ -24,7 +24,7 @@ A simple Python package to easily use [Meta's Massively Multilingual Speech (MMS
 Check the [perl website]([perl](https://www.perl.org/get.html)) for installation instructions on different platforms.
 * You will need a nightly version of `torchaudio`:
 ```shell
-pip install --pre torchaudio --index-url https://download.pytorch.org/whl/nightly/cu118
+pip install -U --pre torchaudio --index-url https://download.pytorch.org/whl/nightly/cu118
 ```
 * You might need [sox](https://arielvb.readthedocs.io/en/latest/docs/commandline/sox.html) as well.
 
