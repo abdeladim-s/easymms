@@ -11,18 +11,30 @@ import sys
 from pathlib import Path
 from typing import List
 import torch
-import fairseq
+# fix importing from fairseq.examples
+try:
+    from fairseq.examples.mms.data_prep.align_and_segment import get_alignments
+    from fairseq.examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
+    from fairseq.examples.mms.data_prep.text_normalization import text_normalize
+except ImportError:
+    try:
+        from examples.mms.data_prep.align_and_segment import get_alignments
+        from examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
+        from examples.mms.data_prep.text_normalization import text_normalize
+    except ImportError:
+        import fairseq
+        sys.path.append(str(Path(fairseq.__file__).parent))
+        from fairseq.examples.mms.data_prep.align_and_segment import get_alignments
+        from fairseq.examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
+        from fairseq.examples.mms.data_prep.text_normalization import text_normalize
 
 from easymms import utils
 from easymms._logger import set_log_level
 from easymms.constants import PACKAGE_DATA_DIR, ALIGNMENT_MODEL_URL, ALIGNMENT_DICTIONARY_URL, UROMAN_URL, \
     UROMAN_DIR_NAME
 
-sys.path.append(str(Path(fairseq.__file__).parent))  # fix importing from fairseq.examples
 
-from fairseq.examples.mms.data_prep.align_and_segment import get_alignments
-from fairseq.examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
-from fairseq.examples.mms.data_prep.text_normalization import text_normalize
+
 from torchaudio.models import wav2vec2_model
 
 logger = logging.getLogger(__name__)
