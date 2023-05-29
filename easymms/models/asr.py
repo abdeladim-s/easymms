@@ -15,17 +15,24 @@ import tempfile
 import logging
 from pathlib import Path
 from typing import Union, List
-import fairseq
+
 import torch
 from omegaconf import OmegaConf
 from pydub import AudioSegment
 from pydub.utils import mediainfo
 
+# fix importing from fairseq.examples
+try:
+    from fairseq.examples.speech_recognition.new.infer import hydra_main
+except ImportError:
+    try:
+        from examples.speech_recognition.new.infer import hydra_main
+    except ImportError:
+        import fairseq
+        sys.path.append(str(Path(fairseq.__file__).parent))
+        from fairseq.examples.speech_recognition.new.infer import hydra_main
+
 from easymms import utils
-
-sys.path.append(str(Path(fairseq.__file__).parent))  # fix importing from fairseq.examples
-
-from fairseq.examples.speech_recognition.new.infer import hydra_main
 from easymms._logger import set_log_level
 from easymms.models.alignment import AlignmentModel
 from easymms.constants import CFG, HYPO_WORDS_FILE, MMS_LANGS_FILE
