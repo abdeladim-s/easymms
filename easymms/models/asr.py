@@ -158,7 +158,7 @@ class ASRModel:
                     pass  # default
                 else:
                     device = 'cpu'
-            elif device == 'cpu':
+            if device == 'cpu':
                 self.cfg['common']['cpu'] = True
             elif device == 'tpu':
                 self.cfg['common']['tpu'] = True
