@@ -4,3 +4,4 @@ platformdirs==3.5.1
 editdistance
 sox
 dataclasses
+soundfile
