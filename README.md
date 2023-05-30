@@ -42,6 +42,10 @@ or from source
 ```bash
 pip install git+https://github.com/abdeladim-s/easymms
 ```
+4. `Fairseq` has not included the `MMS` project yet in the released PYPI version, so until the next release, you will need to install `fairseq` from source:
+```shell
+pip uninstall fairseq && pip install git+https://github.com/facebookresearch/fairseq
+```
 
 # Quickstart
 
