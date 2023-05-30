@@ -8,6 +8,8 @@ A simple Python package to easily use [Meta's Massively Multilingual Speech (MMS
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
+The [current MMS code](https://github.com/facebookresearch/fairseq/blob/main/examples/mms/asr/infer/mms_infer.py) is using subprocess to call another Python script, which is not very convenient to use, and might lead to several [issues](https://github.com/facebookresearch/fairseq/issues/5117).
+This package is created to address those problems and to wrap up the project in an API to easily integrate it with other projects. 
 <!-- TOC -->
 * [Installation](#installation)
 * [Quickstart](#quickstart)
