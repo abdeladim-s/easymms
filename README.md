@@ -48,6 +48,8 @@ pip uninstall fairseq && pip install git+https://github.com/facebookresearch/fai
 ```
 
 # Quickstart
+:warning: There is an [issue](https://github.com/abdeladim-s/easymms/issues/3) with `fairseq` when running the code in interactive environments like Jupyter notebooks.<br/>
+**Please use normal Python files** or use the colab notebook provided above. 
 
 ## ASR 
 You will need first to download the model weights, you can find and download all the supported models from [here](https://github.com/facebookresearch/fairseq/tree/main/examples/mms#asr).
