@@ -152,15 +152,16 @@ class ASRModel:
         if cfg is None:
             self.cfg['task']['data'] = self.cfg['decoding']['results_path'] = str(self.tmp_dir_path.resolve())
             self.cfg['dataset']['gen_subset'] = f'{lang}:dev'
-            if device is None or device == 'cuda':
+            if device is None:
                 if torch.cuda.is_available():
                     device = 'cuda'
-                    pass  # default
                 else:
                     device = 'cpu'
-            if device == 'cpu':
+            if device == 'cuda':
+                pass  # default
+            elif device == 'cpu':
                 self.cfg['common']['cpu'] = True
-            elif device == 'tpu':
+            if device == 'tpu':
                 self.cfg['common']['tpu'] = True
             else:
                 logging.warning(f'Unknown device option {device}, Use one of (cuda, cpu, tpu)')

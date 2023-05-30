@@ -3,6 +3,9 @@
 A simple Python package to easily use [Meta's Massively Multilingual Speech (MMS) project](https://github.com/facebookresearch/fairseq/tree/main/examples/mms). 
 
 [![PyPi version](https://badgen.net/pypi/v/easymms)](https://pypi.org/project/easymms/)
+<a target="_blank" href="https://colab.research.google.com/github/abdeladim-s/easymms/blob/main/examples/EasyMMS.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 <!-- TOC -->
 * [Installation](#installation)
@@ -31,6 +34,10 @@ pip install -U --pre torchaudio --index-url https://download.pytorch.org/whl/nig
 3. Install `easymms` from Pypi
 ```bash
 pip install easymms
+```
+or from source 
+```bash
+pip install git+https://github.com/abdeladim-s/easymms
 ```
 
 # Quickstart
