@@ -26,5 +26,12 @@ setup(
         'Source': 'https://abdeladim-s.github.io/easymms/',
         'Tracker': 'https://abdeladim-s.github.io/easymms/issues',
     },
-    install_requires=["fairseq~=0.12.2", "pydub~=0.25.1", "platformdirs==3.5.1", "editdistance", "sox", "dataclasses", "soundfile"],
+    install_requires=["fairseq~=0.12.2",
+                      "pydub~=0.25.1",
+                      "platformdirs==3.5.1",
+                      "editdistance",
+                      "sox",
+                      "dataclasses",
+                      "soundfile",
+                      "GitPython"],
 )

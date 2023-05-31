@@ -15,10 +15,10 @@ import tarfile
 import logging
 from pathlib import Path
 from typing import List, Tuple
-import pydub
 import torch
-from pydub.playback import play
 import soundfile as sf
+import site
+sys.path.append(str(Path(site.getsitepackages()[0]) / 'fairseq'))
 
 import easymms.utils as easymms_utils
 from easymms._logger import set_log_level
@@ -135,16 +135,11 @@ class TTSModel:
         """
         from utils import get_hparams_from_file, load_checkpoint
         from models import SynthesizerTrn
+        from vits.utils import get_hparams_from_file
         try:
             from fairseq.examples.mms.tts.infer import TextMapper
-            from vits.utils import get_hparams_from_file
         except ImportError:
-            try:
-                from examples.mms.tts.infer import TextMapper
-            except ImportError:
-                import fairseq
-                sys.path.append(str(Path(fairseq.__file__).parent))
-                from fairseq.examples.mms.tts.infer import TextMapper
+            from examples.mms.tts.infer import TextMapper
 
         if device is None:
             if torch.cuda.is_available():
