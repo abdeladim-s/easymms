@@ -83,8 +83,11 @@ class TTSModel:
         easymms_utils.clone(constants.UROMAN_URL, constants.UROMAN_DIR)
         # clone VITS
         easymms_utils.clone(constants.VITS_URL, constants.VITS_DIR)
-        # add VITS to path
         sys.path.append(str(constants.VITS_DIR.resolve()))
+        # clone Fairseq
+        easymms_utils.clone(constants.FAIRSEQ_URL, constants.FAIRSEQ_DIR)
+        sys.path.append(str(constants.FAIRSEQ_DIR.resolve()))
+
         # build monotonic ext
         monotonic_ext_dir = constants.VITS_DIR / 'monotonic_align' / 'monotonic_align'
         Path.mkdir(monotonic_ext_dir, exist_ok=True)
@@ -135,17 +138,11 @@ class TTSModel:
         :param device: Pytorch device (cpu/cuda)
         :return: Tuple(data, sample_rate)
         """
-        cwd = os.getcwd()
         os.chdir(constants.VITS_DIR)
         from utils import get_hparams_from_file, load_checkpoint
         from models import SynthesizerTrn
-
-        try:
-            fairseq_dir = str(Path(site.getsitepackages()[0]) / 'fairseq')
-            sys.path.append(fairseq_dir)
-            from fairseq.examples.mms.tts.infer import TextMapper
-        except ImportError:
-            from examples.mms.tts.infer import TextMapper
+        os.chdir(constants.FAIRSEQ_DIR)
+        from examples.mms.tts.infer import TextMapper
 
         if device is None:
             if torch.cuda.is_available():

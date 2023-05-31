@@ -87,7 +87,7 @@ def clone(repo_url, destination_folder: Path):
     if destination_folder.exists():
         logger.info(f"{destination_folder} already exists")
     else:
-        logger.info(f"Cloning from {constants.UROMAN_URL} tp {destination_folder} ...")
+        logger.info(f"Cloning from {repo_url} tp {destination_folder} ...")
         Repo.clone_from(repo_url, str(destination_folder.resolve()))
     return destination_folder
 def get_uroman():

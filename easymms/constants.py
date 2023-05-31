@@ -21,6 +21,9 @@ TTS_MODELS_BASE_URL = "https://dl.fbaipublicfiles.com/mms/tts/"  # lang.tar.gz
 VITS_URL = "https://github.com/jaywalnut310/vits"
 VITS_DIR = TTS_DIR / 'vits'
 
+FAIRSEQ_URL = "https://github.com/facebookresearch/fairseq"
+FAIRSEQ_DIR = Path(PACKAGE_DATA_DIR) / 'fairseq'
+
 CFG = {
   '_name': None,
   'task': {
