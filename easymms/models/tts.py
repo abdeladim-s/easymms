@@ -138,12 +138,13 @@ class TTSModel:
         :param device: Pytorch device (cpu/cuda)
         :return: Tuple(data, sample_rate)
         """
+        cwd = os.getcwd()
         os.chdir(constants.VITS_DIR)
         from utils import get_hparams_from_file, load_checkpoint
         from models import SynthesizerTrn
         os.chdir(constants.FAIRSEQ_DIR)
         from examples.mms.tts.infer import TextMapper
-
+        os.chdir(cwd)
         if device is None:
             if torch.cuda.is_available():
                 device = 'cuda'
