@@ -18,9 +18,8 @@ from typing import List, Tuple
 import torch
 import soundfile as sf
 import site
-fairseq_dir = str(Path(site.getsitepackages()[0]) / 'fairseq')
 
-sys.path.append(fairseq_dir)
+
 
 import easymms.utils as easymms_utils
 from easymms._logger import set_log_level
@@ -89,7 +88,7 @@ class TTSModel:
         # build monotonic ext
         monotonic_ext_dir = constants.VITS_DIR / 'monotonic_align' / 'monotonic_align'
         Path.mkdir(monotonic_ext_dir, exist_ok=True)
-        pwd = os.getcwd()
+        cwd = os.getcwd()
         if len(list(monotonic_ext_dir.iterdir())) > 0:
             # extension is probably already there
             return
@@ -98,7 +97,7 @@ class TTSModel:
             os.chdir(str(constants.VITS_DIR / 'monotonic_align'))
             run_setup(str(constants.VITS_DIR / 'monotonic_align' / 'setup.py'), script_args=['build_ext', '--inplace'],
                       stop_after='run')
-            os.chdir(pwd)
+            # os.chdir(cwd)
     @staticmethod
     def _download_tts_model_files(lang: str):
         """
@@ -136,11 +135,14 @@ class TTSModel:
         :param device: Pytorch device (cpu/cuda)
         :return: Tuple(data, sample_rate)
         """
-        os.chdir()
+        cwd = os.getcwd()
+        os.chdir(constants.VITS_DIR)
         from utils import get_hparams_from_file, load_checkpoint
         from models import SynthesizerTrn
-        from vits.utils import get_hparams_from_file
+
         try:
+            fairseq_dir = str(Path(site.getsitepackages()[0]) / 'fairseq')
+            sys.path.append(fairseq_dir)
             from fairseq.examples.mms.tts.infer import TextMapper
         except ImportError:
             from examples.mms.tts.infer import TextMapper

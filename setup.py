@@ -33,5 +33,8 @@ setup(
                       "sox",
                       "dataclasses",
                       "soundfile",
-                      "GitPython"],
+                      "GitPython",
+                      "Unidecode==1.1.1",
+                      "phonemizer==2.2.1",
+                      "librosa==0.8.0"],
 )
