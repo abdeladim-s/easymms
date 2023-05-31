@@ -12,26 +12,21 @@ from pathlib import Path
 from typing import List
 import torch
 # fix importing from fairseq.examples
+import site
+sys.path.append(str(Path(site.getsitepackages()[0]) / 'fairseq'))
 try:
     from fairseq.examples.mms.data_prep.align_and_segment import get_alignments
     from fairseq.examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
     from fairseq.examples.mms.data_prep.text_normalization import text_normalize
 except ImportError:
-    try:
-        from examples.mms.data_prep.align_and_segment import get_alignments
-        from examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
-        from examples.mms.data_prep.text_normalization import text_normalize
-    except ImportError:
-        import fairseq
-        sys.path.append(str(Path(fairseq.__file__).parent))
-        from fairseq.examples.mms.data_prep.align_and_segment import get_alignments
-        from fairseq.examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
-        from fairseq.examples.mms.data_prep.text_normalization import text_normalize
+    from examples.mms.data_prep.align_and_segment import get_alignments
+    from examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
+    from examples.mms.data_prep.text_normalization import text_normalize
 
 from easymms import utils
 from easymms._logger import set_log_level
 from easymms.constants import PACKAGE_DATA_DIR, ALIGNMENT_MODEL_URL, ALIGNMENT_DICTIONARY_URL, UROMAN_URL, \
-    UROMAN_DIR_NAME
+    UROMAN_DIR
 
 
 
@@ -70,7 +65,7 @@ class AlignmentModel:
         if uroman_dir is not None:
             self.uroman_dir_path = Path(uroman_dir)
         else:
-            self._get_uroman()
+            self.uroman_dir_path = utils.get_uroman()
 
         if model is not None:
             self.model_path = Path(model)
@@ -83,16 +78,6 @@ class AlignmentModel:
             self.dictionary_path = Path(PACKAGE_DATA_DIR) / "ctc_alignment_mling_uroman_model.dict"
 
         self.model, self.dictionary = self._load_model_dict()
-
-    def _get_uroman(self):
-        logger.info("Searching uroman ...")
-        uroman_dir_path = Path(PACKAGE_DATA_DIR) / 'uroman' / UROMAN_DIR_NAME
-        if uroman_dir_path.exists():
-            logger.info(f"uroman exists at {uroman_dir_path}")
-        else:
-            logger.info(f"Downloading uroman from {UROMAN_URL} ...")
-            utils.download_and_unzip(UROMAN_URL, str(uroman_dir_path.parent.resolve()))
-        self.uroman_dir_path = uroman_dir_path / 'bin'
 
     def _load_model_dict(self):
         """

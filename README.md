@@ -24,8 +24,16 @@ This package is created to address those problems and to wrap up the project in 
 # Installation
 
 1. You will need [ffmpeg](https://ffmpeg.org/download.html) for audio processing
+2. Install `easymms` from Pypi
+```bash
+pip install easymms
+```
+or from source 
+```bash
+pip install git+https://github.com/abdeladim-s/easymms
+```
 
-2. Also, if you want to use the [`Alignment` model](https://github.com/facebookresearch/fairseq/tree/main/examples/mms/data_prep):
+3. If you want to use the [`Alignment` model](https://github.com/facebookresearch/fairseq/tree/main/examples/mms/data_prep):
 * you will need `perl` to use [uroman](https://github.com/isi-nlp/uroman).
 Check the [perl website]([perl](https://www.perl.org/get.html)) for installation instructions on different platforms.
 * You will need a nightly version of `torchaudio`:
@@ -34,14 +42,7 @@ pip install -U --pre torchaudio --index-url https://download.pytorch.org/whl/nig
 ```
 * You might need [sox](https://arielvb.readthedocs.io/en/latest/docs/commandline/sox.html) as well.
 
-3. Install `easymms` from Pypi
-```bash
-pip install easymms
-```
-or from source 
-```bash
-pip install git+https://github.com/abdeladim-s/easymms
-```
+
 4. `Fairseq` has not included the `MMS` project yet in the released PYPI version, so until the next release, you will need to install `fairseq` from source:
 ```shell
 pip uninstall fairseq && pip install git+https://github.com/facebookresearch/fairseq
@@ -96,7 +97,13 @@ for transcription in transcriptions:
 ```
 
 ## TTS
-Coming Soon
+```python 
+from easymms.models.tts import TTSModel
+
+tts = TTSModel('eng')
+res = tts.synthesize("This is a simple example")
+tts.save(res)
+```
 
 ## LID 
 Coming Soon

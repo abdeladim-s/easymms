@@ -8,6 +8,7 @@ This file contains a class definition to use the ASR models from [Meta's Massive
 __author__ = "Abdeladim S."
 __copyright__ = "Copyright 2023,"
 
+
 import atexit
 import json
 import sys
@@ -15,22 +16,19 @@ import tempfile
 import logging
 from pathlib import Path
 from typing import Union, List
-
 import torch
 from omegaconf import OmegaConf
 from pydub import AudioSegment
 from pydub.utils import mediainfo
 
 # fix importing from fairseq.examples
+import site
+sys.path.append(str(Path(site.getsitepackages()[0]) / 'fairseq'))
 try:
     from fairseq.examples.speech_recognition.new.infer import hydra_main
 except ImportError:
-    try:
-        from examples.speech_recognition.new.infer import hydra_main
-    except ImportError:
-        import fairseq
-        sys.path.append(str(Path(fairseq.__file__).parent))
-        from fairseq.examples.speech_recognition.new.infer import hydra_main
+    from examples.speech_recognition.new.infer import hydra_main
+
 
 from easymms import utils
 from easymms._logger import set_log_level
@@ -163,8 +161,6 @@ class ASRModel:
                 self.cfg['common']['cpu'] = True
             if device == 'tpu':
                 self.cfg['common']['tpu'] = True
-            else:
-                logging.warning(f'Unknown device option {device}, Use one of (cuda, cpu, tpu)')
             cfg = OmegaConf.structured(self.cfg)
 
         self.wer = hydra_main(cfg)
@@ -198,4 +194,3 @@ class ASRModel:
         with open(MMS_LANGS_FILE) as f:
             data = json.load(f)
             return [key for key in data if data[key]['ASR']]
-

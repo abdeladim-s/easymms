@@ -5,3 +5,7 @@ editdistance
 sox
 dataclasses
 soundfile
+GitPython
+librosa==0.8.0
+Unidecode==1.1.1
+phonemizer==2.2.1

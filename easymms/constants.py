@@ -11,9 +11,15 @@ import numpy as np
 from platformdirs import *
 
 PACKAGE_NAME = 'easymms'
+LOGGING_LEVEL = logging.INFO
+
 PACKAGE_DATA_DIR = user_data_dir(PACKAGE_NAME)
 
-LOGGING_LEVEL = logging.INFO
+
+TTS_DIR = (Path(PACKAGE_DATA_DIR) / 'tts').resolve()
+TTS_MODELS_BASE_URL = "https://dl.fbaipublicfiles.com/mms/tts/"  # lang.tar.gz
+VITS_URL = "https://github.com/jaywalnut310/vits"
+VITS_DIR = TTS_DIR / 'vits'
 
 CFG = {
   '_name': None,
@@ -197,7 +203,7 @@ HYPO_WORDS_FILE = 'hypo.word'
 ALIGNMENT_MODEL_URL = "https://dl.fbaipublicfiles.com/mms/torchaudio/ctc_alignment_mling_uroman/model.pt"
 ALIGNMENT_DICTIONARY_URL = "https://dl.fbaipublicfiles.com/mms/torchaudio/ctc_alignment_mling_uroman/dictionary.txt"
 
-UROMAN_URL = "https://github.com/isi-nlp/uroman/archive/refs/tags/v1.2.8.zip"
-UROMAN_DIR_NAME = 'uroman-1.2.8'
+UROMAN_URL = "https://github.com/isi-nlp/uroman"
+UROMAN_DIR = Path(PACKAGE_DATA_DIR) / 'uroman'
 
 MMS_LANGS_FILE = (Path(__file__).parent / 'data' / 'mms_langs.json').resolve()
