@@ -23,6 +23,14 @@ from omegaconf import OmegaConf
 from pydub import AudioSegment
 from pydub.utils import mediainfo
 
+# fix importing from fairseq.examples
+# import site
+# sys.path.append(str(Path(site.getsitepackages()[0]) / 'fairseq'))
+# try:
+#     from fairseq.examples.speech_recognition.new.infer import hydra_main
+# except ImportError:
+#     from examples.speech_recognition.new.infer import hydra_main
+
 
 from easymms import utils as easymms_utils
 from easymms._logger import set_log_level
@@ -142,12 +150,16 @@ class ASRModel:
 
         :return: List of transcription text in the same order as input files
         """
+        processed_files = self._prepare_media_files(media_files)
         # import
         cwd = os.getcwd()
         os.chdir(constants.FAIRSEQ_DIR)
         from examples.speech_recognition.new.infer import hydra_main
+        import site
+        fairseq_path = str((Path(site.getsitepackages()[0]) / 'fairseq').resolve())
+        sys.path.append(fairseq_path)
+        os.chdir(fairseq_path)
 
-        processed_files = self._prepare_media_files(media_files)
         self._setup_tmp_dir(processed_files)
         # edit cfg
         if cfg is None:
@@ -186,8 +198,8 @@ class ASRModel:
                 res.append(segments)
         else:
             res = transcripts
-
         os.chdir(cwd)
+
         return res
 
     @staticmethod
