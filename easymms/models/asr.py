@@ -187,16 +187,11 @@ class ASRModel:
             )
         except ImportError:
             # we need to build the extension
+            logger.info("Bulding required extensions, this may take a while ...")
             from distutils.core import run_setup
             run_setup(str((constants.FAIRSEQ_DIR / 'setup.py').resolve()), script_args=['build_ext', '--inplace'],
                       stop_after='run')
 
-        # cwd = os.getcwd()
-        # os.chdir(constants.FAIRSEQ_DIR)
-        # import site
-        # fairseq_path = str((Path(site.getsitepackages()[0]) / 'fairseq').resolve())
-        # sys.path.append(fairseq_path)
-        # os.chdir(fairseq_path)
 
         self._setup_tmp_dir(processed_files)
         # edit cfg
