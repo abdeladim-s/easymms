@@ -11,6 +11,7 @@ __copyright__ = "Copyright 2023,"
 
 import atexit
 import json
+import re
 import sys
 import tempfile
 import logging
@@ -168,8 +169,9 @@ class ASRModel:
         hypo_file = self.tmp_dir_path / HYPO_WORDS_FILE
         res = []
         with open(hypo_file) as hw:
-            transcripts = [line.strip()[:-9] for line in hw.readlines()]
-            transcripts.reverse()
+            hypos = hw.readlines()
+            outputs = self._reorder_decode(hypos)
+            transcripts = [line[1].strip() for line in outputs]
         if align:
             align_model = AlignmentModel()
             for i in range(len(transcripts)):
@@ -194,3 +196,20 @@ class ASRModel:
         with open(MMS_LANGS_FILE) as f:
             data = json.load(f)
             return [key for key in data if data[key]['ASR']]
+
+    @staticmethod
+    def _reorder_decode(hypos):
+        """
+        Helper method to reorder the `hypos`, see @bekarys0504 comment in
+        [#5](https://github.com/abdeladim-s/easymms/issues/5)
+
+        :param hypos: hypos list
+        :return: ordered hypos
+        """
+        outputs = []
+        for hypo in hypos:
+            idx = int(re.findall("\(None-(\d+)\)$", hypo)[0])
+            hypo = re.sub("\(\S+\)$", "", hypo).strip()
+            outputs.append((idx, hypo))
+        outputs = sorted(outputs)
+        return outputs

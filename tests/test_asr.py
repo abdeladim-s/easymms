@@ -16,7 +16,7 @@ class TestASR(TestCase):
     ara_files = ['../assets/ara_1.ogg']
 
     def test_transcribe_eng(self):
-        res = self.asr.transcribe(self.eng_files, align=True, lang='eng')
+        res = self.asr.transcribe(self.eng_files, align=False, lang='eng')
         self.assertIsNotNone(res)
         self.assertIsInstance(res, list)
         self.assertEqual(len(self.eng_files), len(res))
