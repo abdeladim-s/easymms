@@ -146,7 +146,6 @@ class ASRModel:
         cwd = os.getcwd()
         os.chdir(constants.FAIRSEQ_DIR)
         from examples.speech_recognition.new.infer import hydra_main
-        os.chdir(cwd)
 
         processed_files = self._prepare_media_files(media_files)
         self._setup_tmp_dir(processed_files)
@@ -187,6 +186,8 @@ class ASRModel:
                 res.append(segments)
         else:
             res = transcripts
+
+        os.chdir(cwd)
         return res
 
     @staticmethod
