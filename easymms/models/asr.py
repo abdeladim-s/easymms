@@ -128,7 +128,7 @@ class ASRModel:
                    media_files: List[str],
                    lang: str = 'eng',
                    device: str = None,
-                   align: bool = True,
+                   align: bool = False,
                    timestamps_type: str = 'segment',
                    max_segment_len: int = 27,
                    cfg: dict = None) -> Union[List[str], List[dict]]:
