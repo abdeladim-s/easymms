@@ -9,6 +9,7 @@ __author__ = "Abdeladim S."
 __copyright__ = "Copyright 2023,"
 
 
+import os
 import atexit
 import json
 import re
@@ -22,19 +23,11 @@ from omegaconf import OmegaConf
 from pydub import AudioSegment
 from pydub.utils import mediainfo
 
-# fix importing from fairseq.examples
-import site
-sys.path.append(str(Path(site.getsitepackages()[0]) / 'fairseq'))
-try:
-    from fairseq.examples.speech_recognition.new.infer import hydra_main
-except ImportError:
-    from examples.speech_recognition.new.infer import hydra_main
 
-
-from easymms import utils
+from easymms import utils as easymms_utils
 from easymms._logger import set_log_level
 from easymms.models.alignment import AlignmentModel
-from easymms.constants import CFG, HYPO_WORDS_FILE, MMS_LANGS_FILE
+from easymms import constants
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +58,7 @@ class ASRModel:
         :param log_level: log level
         """
         set_log_level(log_level)
-        self.cfg = CFG.copy()
+        self.cfg = constants.CFG.copy()
         self.model = Path(model)
         self.cfg['common_eval']['path'] = str(self.model.resolve())
 
@@ -74,6 +67,10 @@ class ASRModel:
         atexit.register(self._cleanup)
 
         self.wer = None
+
+        # clone Fairseq
+        easymms_utils.clone(constants.FAIRSEQ_URL, constants.FAIRSEQ_DIR)
+        sys.path.append(str(constants.FAIRSEQ_DIR.resolve()))
 
     def _cleanup(self) -> None:
         """
@@ -145,6 +142,12 @@ class ASRModel:
 
         :return: List of transcription text in the same order as input files
         """
+        # import
+        cwd = os.getcwd()
+        os.chdir(constants.FAIRSEQ_DIR)
+        from examples.speech_recognition.new.infer import hydra_main
+        os.chdir(cwd)
+
         processed_files = self._prepare_media_files(media_files)
         self._setup_tmp_dir(processed_files)
         # edit cfg
@@ -166,7 +169,7 @@ class ASRModel:
 
         self.wer = hydra_main(cfg)
         # get results: will just read from hypo.word as I don't want to change fairseq repo to get the hypo array
-        hypo_file = self.tmp_dir_path / HYPO_WORDS_FILE
+        hypo_file = self.tmp_dir_path / constants.HYPO_WORDS_FILE
         res = []
         with open(hypo_file) as hw:
             hypos = hw.readlines()
@@ -176,7 +179,7 @@ class ASRModel:
             align_model = AlignmentModel()
             for i in range(len(transcripts)):
                 media_file = processed_files[i][0]
-                transcript = utils.get_transcript_segments(transcripts[i], timestamps_type, max_segment_len=max_segment_len)
+                transcript = easymms_utils.get_transcript_segments(transcripts[i], timestamps_type, max_segment_len=max_segment_len)
                 segments = align_model.align(media_file=media_file,
                                              transcript=transcript,
                                              lang=lang,
@@ -193,7 +196,7 @@ class ASRModel:
         Source <https://dl.fbaipublicfiles.com/mms/misc/language_coverage_mms.html>
         :return: list of supported languages
         """
-        with open(MMS_LANGS_FILE) as f:
+        with open(constants.MMS_LANGS_FILE) as f:
             data = json.load(f)
             return [key for key in data if data[key]['ASR']]
 
