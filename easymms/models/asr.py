@@ -76,30 +76,6 @@ class ASRModel:
 
         self.wer = None
 
-
-
-    def _setup(self):
-        """
-        Helper function to setup different required packages
-        :return: None
-        """
-        # clone Fairseq
-        easymms_utils.clone(constants.FAIRSEQ_URL, constants.FAIRSEQ_DIR)
-        fairseq_dir = str(constants.FAIRSEQ_DIR.resolve())
-        sys.path.append(fairseq_dir)
-        try:
-            from fairseq.data.data_utils_fast import (
-                batch_by_size_fn,
-                batch_by_size_vec,
-                batch_fixed_shapes_fast,
-            )
-        except ImportError:
-            # we need to build the extension
-            from distutils.core import run_setup
-            run_setup(str((constants.FAIRSEQ_DIR / 'setup.py').resolve()), script_args=['build_ext', '--inplace'],
-                      stop_after='run')
-
-
     def _cleanup(self) -> None:
         """
         cleans up the temp_dir
