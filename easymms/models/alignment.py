@@ -11,20 +11,9 @@ import sys
 from pathlib import Path
 from typing import List
 import torch
-# fix importing from fairseq.examples
-# import site
-# sys.path.append(str(Path(site.getsitepackages()[0]) / 'fairseq'))
-# try:
-#     from fairseq.examples.mms.data_prep.align_and_segment import get_alignments
-#     from fairseq.examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
-#     from fairseq.examples.mms.data_prep.text_normalization import text_normalize
-# except ImportError:
-#     from examples.mms.data_prep.align_and_segment import get_alignments
-#     from examples.mms.data_prep.align_utils import get_uroman_tokens, get_spans
-#     from examples.mms.data_prep.text_normalization import text_normalize
-
-from easymms import utils
+from easymms import utils as easymms_utils
 from easymms._logger import set_log_level
+from easymms import constants
 from easymms.constants import PACKAGE_DATA_DIR, ALIGNMENT_MODEL_URL, ALIGNMENT_DICTIONARY_URL, UROMAN_URL, \
     UROMAN_DIR
 
@@ -65,7 +54,7 @@ class AlignmentModel:
         if uroman_dir is not None:
             self.uroman_dir_path = Path(uroman_dir)
         else:
-            self.uroman_dir_path = utils.get_uroman()
+            self.uroman_dir_path = easymms_utils.get_uroman()
 
         if model is not None:
             self.model_path = Path(model)
