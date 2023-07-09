@@ -1,0 +1,3427 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>EasyMMS</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#easymms-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="EasyMMS" class="md-header__button md-logo" aria-label="EasyMMS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EasyMMS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              EasyMMS API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abdeladim-s/easymms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    abdeladim-s/easymms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="." class="md-tabs__link md-tabs__link--active">
+      EasyMMS API Reference
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="EasyMMS" class="md-nav__button md-logo" aria-label="EasyMMS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    EasyMMS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abdeladim-s/easymms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    abdeladim-s/easymms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          EasyMMS API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        EasyMMS API Reference
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#easymms.models" class="md-nav__link">
+    models
+  </a>
+  
+    <nav class="md-nav" aria-label="models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.tts" class="md-nav__link">
+    tts
+  </a>
+  
+    <nav class="md-nav" aria-label="tts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.tts.TTSModel" class="md-nav__link">
+    TTSModel
+  </a>
+  
+    <nav class="md-nav" aria-label="TTSModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.tts.TTSModel.get_supported_langs" class="md-nav__link">
+    get_supported_langs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.tts.TTSModel.synthesize" class="md-nav__link">
+    synthesize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.tts.TTSModel.save" class="md-nav__link">
+    save()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.alignment" class="md-nav__link">
+    alignment
+  </a>
+  
+    <nav class="md-nav" aria-label="alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.alignment.AlignmentModel" class="md-nav__link">
+    AlignmentModel
+  </a>
+  
+    <nav class="md-nav" aria-label="AlignmentModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.alignment.AlignmentModel.align" class="md-nav__link">
+    align()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.asr" class="md-nav__link">
+    asr
+  </a>
+  
+    <nav class="md-nav" aria-label="asr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.asr.ASRModel" class="md-nav__link">
+    ASRModel
+  </a>
+  
+    <nav class="md-nav" aria-label="ASRModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.asr.ASRModel.transcribe" class="md-nav__link">
+    transcribe()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.models.asr.ASRModel.get_supported_langs" class="md-nav__link">
+    get_supported_langs()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymms.constants" class="md-nav__link">
+    constants
+  </a>
+  
+    <nav class="md-nav" aria-label="constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.PACKAGE_NAME" class="md-nav__link">
+    PACKAGE_NAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.LOGGING_LEVEL" class="md-nav__link">
+    LOGGING_LEVEL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.PACKAGE_DATA_DIR" class="md-nav__link">
+    PACKAGE_DATA_DIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.TTS_DIR" class="md-nav__link">
+    TTS_DIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.TTS_MODELS_BASE_URL" class="md-nav__link">
+    TTS_MODELS_BASE_URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.VITS_URL" class="md-nav__link">
+    VITS_URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.VITS_DIR" class="md-nav__link">
+    VITS_DIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.FAIRSEQ_URL" class="md-nav__link">
+    FAIRSEQ_URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.FAIRSEQ_DIR" class="md-nav__link">
+    FAIRSEQ_DIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.CFG" class="md-nav__link">
+    CFG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.HYPO_WORDS_FILE" class="md-nav__link">
+    HYPO_WORDS_FILE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.ALIGNMENT_MODEL_URL" class="md-nav__link">
+    ALIGNMENT_MODEL_URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.ALIGNMENT_DICTIONARY_URL" class="md-nav__link">
+    ALIGNMENT_DICTIONARY_URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.UROMAN_URL" class="md-nav__link">
+    UROMAN_URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.UROMAN_DIR" class="md-nav__link">
+    UROMAN_DIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.constants.MMS_LANGS_FILE" class="md-nav__link">
+    MMS_LANGS_FILE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymms.utils" class="md-nav__link">
+    utils
+  </a>
+  
+    <nav class="md-nav" aria-label="utils">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easymms.utils.download_file" class="md-nav__link">
+    download_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.utils.download_and_extract" class="md-nav__link">
+    download_and_extract()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.utils.get_lang_info" class="md-nav__link">
+    get_lang_info()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easymms.utils.get_transcript_segments" class="md-nav__link">
+    get_transcript_segments()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="easymms-api-reference">EasyMMS API Reference</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="easymms.models" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">easymms.models</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="easymms.models.tts" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">tts</span>
+
+
+</h3>
+
+  <div class="doc doc-contents ">
+  
+      <p>This file contains a class definition to use the TTS models from <a href="https://github.com/facebookresearch/fairseq/tree/main/examples/mms">Meta's Massively Multilingual Speech (MMS) project</a></p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="easymms.models.tts.TTSModel" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">TTSModel</span>
+
+
+</h4>
+<div class="highlight"><pre><span></span><code><span class="n">TTSModel</span><span class="p">(</span><span class="n">lang</span><span class="p">,</span> <span class="n">model_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+
+  
+      <p>TTS class model</p>
+<p>Example usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">easymms.models.tts</span> <span class="kn">import</span> <span class="n">TTSModel</span>
+
+<span class="n">tts</span> <span class="o">=</span> <span class="n">TTSModel</span><span class="p">(</span><span class="s1">&#39;eng&#39;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">tts</span><span class="o">.</span><span class="n">synthesize</span><span class="p">(</span><span class="s2">&quot;This is a simple example&quot;</span><span class="p">)</span>
+<span class="n">tts</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</code></pre></div>
+
+  
+      <p>Use a TTS model by its language ISO ID.
+The model will be downloaded automatically</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>lang</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>TTS model language</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>log_level</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>log level</p>
+            </div>
+          </td>
+          <td>
+                <code>logging.INFO</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>easymms/models/tts.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">lang</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+             <span class="n">model_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">log_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Use a TTS model by its language ISO ID.</span>
+<span class="sd">    The model will be downloaded automatically</span>
+
+<span class="sd">    :param lang: TTS model language</span>
+<span class="sd">    :param log_level: log level</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">log_level</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lang</span> <span class="o">=</span> <span class="n">lang</span>
+    <span class="n">set_log_level</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
+    <span class="c1"># check if models_dir is provided</span>
+    <span class="k">if</span> <span class="n">model_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># verify if all files exist</span>
+        <span class="n">model_dir_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">model_dir</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">model_dir_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download_tts_model_files</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">cp</span> <span class="o">=</span> <span class="n">model_dir_path</span> <span class="o">/</span> <span class="s2">&quot;G_100000.pth&quot;</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">cp</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;G_100000.pth not found in </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">model_dir_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">model_dir_path</span> <span class="o">/</span> <span class="s2">&quot;config.json&quot;</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;config.json not found in </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">model_dir_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span> <span class="o">=</span> <span class="n">model_dir_path</span> <span class="o">/</span> <span class="s2">&quot;vocab.txt&quot;</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;vocab.txt not found in </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">model_dir_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">uroman_dir_path</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="easymms.models.tts.TTSModel.get_supported_langs" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">get_supported_langs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h5>
+<div class="highlight"><pre><span></span><code><span class="n">get_supported_langs</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Helper function to get supported ISO 693-3 languages by the TTS models
+Source <a href="https://dl.fbaipublicfiles.com/mms/misc/language_coverage_mms.html">https://dl.fbaipublicfiles.com/mms/misc/language_coverage_mms.html</a></p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of supported languages</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/models/tts.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">get_supported_langs</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper function to get supported ISO 693-3 languages by the TTS models</span>
+<span class="sd">    Source &lt;https://dl.fbaipublicfiles.com/mms/misc/language_coverage_mms.html&gt;</span>
+<span class="sd">    :return: list of supported languages</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">MMS_LANGS_FILE</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;TTS&#39;</span><span class="p">]]</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="easymms.models.tts.TTSModel.synthesize" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">synthesize</span>
+
+
+</h5>
+<div class="highlight"><pre><span></span><code><span class="n">synthesize</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Synthesizes the text provided as input.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>txt</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Text</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lang</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Language</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>device</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pytorch device (cpu/cuda)</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Tuple(data, sample_rate)</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/models/tts.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">synthesize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">txt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Synthesizes the text provided as input.</span>
+
+<span class="sd">    :param txt: Text</span>
+<span class="sd">    :param lang: Language</span>
+<span class="sd">    :param device: Pytorch device (cpu/cuda)</span>
+<span class="sd">    :return: Tuple(data, sample_rate)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">VITS_DIR</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">get_hparams_from_file</span><span class="p">,</span> <span class="n">load_checkpoint</span>
+    <span class="kn">from</span> <span class="nn">models</span> <span class="kn">import</span> <span class="n">SynthesizerTrn</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_DIR</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">examples.mms.tts.infer</span> <span class="kn">import</span> <span class="n">TextMapper</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+            <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cpu&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">device</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cpu&#39;</span><span class="p">,</span> <span class="s1">&#39;cuda&#39;</span><span class="p">]</span>
+
+    <span class="n">text_mapper</span> <span class="o">=</span> <span class="n">TextMapper</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">))</span>
+    <span class="n">hps</span> <span class="o">=</span> <span class="n">get_hparams_from_file</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">))</span>
+    <span class="n">net_g</span> <span class="o">=</span> <span class="n">SynthesizerTrn</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">text_mapper</span><span class="o">.</span><span class="n">symbols</span><span class="p">),</span>
+        <span class="n">hps</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">filter_length</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">hps</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">segment_size</span> <span class="o">//</span> <span class="n">hps</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hop_length</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">hps</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">net_g</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">net_g</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">g_pth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cp</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;loading </span><span class="si">{</span><span class="n">g_pth</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">load_checkpoint</span><span class="p">(</span><span class="n">g_pth</span><span class="p">,</span> <span class="n">net_g</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;text: </span><span class="si">{</span><span class="n">txt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">is_uroman</span> <span class="o">=</span> <span class="n">hps</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">training_files</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;uroman&#39;</span>
+    <span class="k">if</span> <span class="n">is_uroman</span><span class="p">:</span>
+        <span class="n">uroman_pl</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uroman_dir_path</span> <span class="o">/</span> <span class="s2">&quot;uroman.pl&quot;</span><span class="p">)</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="n">text_mapper</span><span class="o">.</span><span class="n">uromanize</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="n">uroman_pl</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;uroman text: </span><span class="si">{</span><span class="n">txt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="n">txt</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="n">text_mapper</span><span class="o">.</span><span class="n">filter_oov</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lang</span><span class="p">)</span>
+    <span class="n">stn_tst</span> <span class="o">=</span> <span class="n">text_mapper</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="n">hps</span><span class="p">)</span>
+    <span class="c1"># inference</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">x_tst</span> <span class="o">=</span> <span class="n">stn_tst</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">x_tst_lengths</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">stn_tst</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">hyp</span> <span class="o">=</span> <span class="n">net_g</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span>
+            <span class="n">x_tst</span><span class="p">,</span> <span class="n">x_tst_lengths</span><span class="p">,</span> <span class="n">noise_scale</span><span class="o">=</span><span class="mf">.667</span><span class="p">,</span>
+            <span class="n">noise_scale_w</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">length_scale</span><span class="o">=</span><span class="mf">1.0</span>
+        <span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">hyp</span><span class="p">,</span> <span class="n">hps</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sampling_rate</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="easymms.models.tts.TTSModel.save" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">save</span>
+
+
+</h5>
+<div class="highlight"><pre><span></span><code><span class="n">save</span><span class="p">(</span><span class="n">tts_data</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s1">&#39;out.wav&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Saves the results of the <code>synthesize</code> function to a file</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>tts_data</code></td>
+          <td>
+                <code><span title="typing.Tuple">Tuple</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>tts_data: a tuple of <code>wav data array</code> and <code>sample rate</code></p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>out_file</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>output file path</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;out.wav&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="pathlib.Path">Path</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>out_file absolute path</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/models/tts.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tts_data</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s1">&#39;out.wav&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Saves the results of the `synthesize` function to a file</span>
+
+<span class="sd">    :param tts_data: tts_data: a tuple of `wav data array` and `sample rate`</span>
+<span class="sd">    :param out_file: output file path</span>
+
+<span class="sd">    :return: out_file absolute path</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_log_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving audio file to </span><span class="si">{</span><span class="n">out_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="n">tts_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tts_data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">out_file</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="easymms.models.alignment" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">alignment</span>
+
+
+</h3>
+
+  <div class="doc doc-contents ">
+  
+      <p>This file contains a simple class to use the AlignmentModel model from the MMS project
+More info can be found here: https://github.com/facebookresearch/fairseq/tree/main/examples/mms/data_prep</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="easymms.models.alignment.AlignmentModel" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">AlignmentModel</span>
+
+
+</h4>
+<div class="highlight"><pre><span></span><code><span class="n">AlignmentModel</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">dictionary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">uroman_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+
+  
+      <p>MMS Alignment algorithm
+Example usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">easymms.models.alignment</span> <span class="kn">import</span> <span class="n">AlignmentModel</span>
+
+<span class="n">align_model</span> <span class="o">=</span> <span class="n">AlignmentModel</span><span class="p">()</span>
+<span class="n">transcriptions</span> <span class="o">=</span> <span class="n">align_model</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="s1">&#39;/home/su/code/easymms/assets/eng_1.mp3&#39;</span><span class="p">,</span>
+                                   <span class="n">transcript</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;segment 1&quot;</span><span class="p">,</span> <span class="s2">&quot;segment 2&quot;</span><span class="p">],</span>
+                                   <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;eng&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">transcription</span> <span class="ow">in</span> <span class="n">transcriptions</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">transcription</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">segment</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">segment</span><span class="p">[</span><span class="s1">&#39;end_time&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">segment</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+          <details class="quote">
+            <summary>Source code in <code>easymms/models/alignment.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">dictionary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">uroman_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">log_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">):</span>
+
+    <span class="n">set_log_level</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">shutil</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="s2">&quot;perl&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;To use the alignment algorithm you will need uroman &quot;</span> \
+                                             <span class="s2">&quot;&lt;https://github.com/isi-nlp/uroman&gt; which is written in perl &quot;</span> \
+                                             <span class="s2">&quot;please install perl first &lt;https://www.perl.org/get.html&gt;&quot;</span>
+    <span class="k">if</span> <span class="n">uroman_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uroman_dir_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">uroman_dir</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uroman_dir_path</span> <span class="o">=</span> <span class="n">easymms_utils</span><span class="o">.</span><span class="n">get_uroman</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">PACKAGE_DATA_DIR</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;ctc_alignment_mling_uroman_model.pt&quot;</span>
+
+    <span class="k">if</span> <span class="n">dictionary</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dictionary_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dictionary_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">PACKAGE_DATA_DIR</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;ctc_alignment_mling_uroman_model.dict&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_model_dict</span><span class="p">()</span>
+
+    <span class="c1"># clone Fairseq</span>
+    <span class="n">easymms_utils</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_URL</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_DIR</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_DIR</span><span class="o">.</span><span class="n">resolve</span><span class="p">()))</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="easymms.models.alignment.AlignmentModel.align" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">align</span>
+
+
+</h5>
+<div class="highlight"><pre><span></span><code><span class="n">align</span><span class="p">(</span><span class="n">media_file</span><span class="p">,</span> <span class="n">transcript</span><span class="p">,</span> <span class="n">lang</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Takes a media file, transcription segments and the lang and returns a list of dicts in the following format
+[{
+    'start_time': ...
+    'end_time': ...,
+    'text': ...,
+    'duration': ...
+}, ...]</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>media_file</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the path of the media file, should be wav</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transcript</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of segments</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lang</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>language ISO code</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>device</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>'cuda' or 'cpu'</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.List">List</span>[dict]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of transcription timestamps</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/models/alignment.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">align</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+          <span class="n">media_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="n">transcript</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+          <span class="n">lang</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a media file, transcription segments and the lang and returns a list of dicts in the following format</span>
+<span class="sd">    [{</span>
+<span class="sd">        &#39;start_time&#39;: ...</span>
+<span class="sd">        &#39;end_time&#39;: ...,</span>
+<span class="sd">        &#39;text&#39;: ...,</span>
+<span class="sd">        &#39;duration&#39;: ...</span>
+<span class="sd">    }, ...]</span>
+
+<span class="sd">    :param media_file: the path of the media file, should be wav</span>
+<span class="sd">    :param transcript: list of segments</span>
+<span class="sd">    :param lang: language ISO code</span>
+<span class="sd">    :param device: &#39;cuda&#39; or &#39;cpu&#39;</span>
+<span class="sd">    :return: list of transcription timestamps</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># import</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_DIR</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">examples.mms.data_prep.align_and_segment</span> <span class="kn">import</span> <span class="n">get_alignments</span>
+    <span class="kn">from</span> <span class="nn">examples.mms.data_prep.align_utils</span> <span class="kn">import</span> <span class="n">get_uroman_tokens</span><span class="p">,</span> <span class="n">get_spans</span>
+    <span class="kn">from</span> <span class="nn">examples.mms.data_prep.text_normalization</span> <span class="kn">import</span> <span class="n">text_normalize</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Aligning file </span><span class="si">{</span><span class="n">media_file</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
+    <span class="n">norm_transcripts</span> <span class="o">=</span> <span class="p">[</span><span class="n">text_normalize</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">lang</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">]</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">get_uroman_tokens</span><span class="p">(</span><span class="n">norm_transcripts</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uroman_dir_path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()),</span> <span class="n">lang</span><span class="p">)</span>
+
+    <span class="n">segments</span><span class="p">,</span> <span class="n">stride</span> <span class="o">=</span> <span class="n">get_alignments</span><span class="p">(</span>
+        <span class="n">media_file</span><span class="p">,</span>
+        <span class="n">tokens</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="p">,</span>
+        <span class="n">use_star</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Get spans of each line in input text file</span>
+    <span class="n">spans</span> <span class="o">=</span> <span class="n">get_spans</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">segments</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">transcript</span><span class="p">):</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">spans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">seg_start_idx</span> <span class="o">=</span> <span class="n">span</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">start</span>
+        <span class="n">seg_end_idx</span> <span class="o">=</span> <span class="n">span</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">end</span>
+        <span class="n">audio_start_sec</span> <span class="o">=</span> <span class="n">seg_start_idx</span> <span class="o">*</span> <span class="n">stride</span> <span class="o">/</span> <span class="mi">1000</span>
+        <span class="n">audio_end_sec</span> <span class="o">=</span> <span class="n">seg_end_idx</span> <span class="o">*</span> <span class="n">stride</span> <span class="o">/</span> <span class="mi">1000</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;start_time&#39;</span><span class="p">:</span> <span class="n">audio_start_sec</span><span class="p">,</span>
+                    <span class="s1">&#39;end_time&#39;</span><span class="p">:</span> <span class="n">audio_end_sec</span><span class="p">,</span>
+                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span>
+                    <span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="n">audio_end_sec</span> <span class="o">-</span> <span class="n">audio_start_sec</span><span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="easymms.models.asr" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">asr</span>
+
+
+</h3>
+
+  <div class="doc doc-contents ">
+  
+      <p>This file contains a class definition to use the ASR models from <a href="https://github.com/facebookresearch/fairseq/tree/main/examples/mms">Meta's Massively Multilingual Speech (MMS) project</a></p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="easymms.models.asr.ASRModel" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">ASRModel</span>
+
+
+</h4>
+<div class="highlight"><pre><span></span><code><span class="n">ASRModel</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+
+  
+      <p>MMS ASR class model</p>
+<p>Example usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">easymms.models.asr</span> <span class="kn">import</span> <span class="n">ASRModel</span>
+
+<span class="n">asr</span> <span class="o">=</span> <span class="n">ASRModel</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;/path/to/mms/model&#39;</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/media_file_1&#39;</span><span class="p">,</span> <span class="s1">&#39;path/to/media_file_2&#39;</span><span class="p">]</span>
+<span class="n">transcriptions</span> <span class="o">=</span> <span class="n">asr</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;eng&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">transcription</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">transcriptions</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt;&gt;&gt; file </span><span class="si">{</span><span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">transcription</span><span class="p">)</span>
+</code></pre></div>
+
+  
+      
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>path to the asr model <a href="https://github.com/facebookresearch/fairseq/tree/main/examples/mms#asr">https://github.com/facebookresearch/fairseq/tree/main/examples/mms#asr</a></p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>log_level</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>log level</p>
+            </div>
+          </td>
+          <td>
+                <code>logging.INFO</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>easymms/models/asr.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+             <span class="n">log_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param model: path to the asr model &lt;https://github.com/facebookresearch/fairseq/tree/main/examples/mms#asr&gt;</span>
+<span class="sd">    :param log_level: log level</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_log_level</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">CFG</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;common_eval&#39;</span><span class="p">][</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cleanup</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">wer</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="easymms.models.asr.ASRModel.transcribe" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">transcribe</span>
+
+
+</h5>
+<div class="highlight"><pre><span></span><code><span class="n">transcribe</span><span class="p">(</span>
+    <span class="n">media_files</span><span class="p">,</span>
+    <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">align</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">timestamps_type</span><span class="o">=</span><span class="s2">&quot;segment&quot;</span><span class="p">,</span>
+    <span class="n">max_segment_len</span><span class="o">=</span><span class="mi">27</span><span class="p">,</span>
+    <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Transcribes a list of media files provided as inputs</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>media_files</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of media files (video/audio), in whichever format supported by ffmpeg</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lang</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the language of the media</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;eng&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>device</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pytorch device (<code>cuda</code>, <code>cpu</code> or <code>tpu</code>)</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>align</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>if True the alignment model will be used to generate the timestamps, otherwise you will get raw text from the MMS model</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timestamps_type</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Once of (<code>segment</code>, <code>word</code> or <code>char</code>) if <code>align</code> is set to True, this will be used to fragment the raw text</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;segment&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>max_segment_len</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the maximum length of the fragmented segments</p>
+            </div>
+          </td>
+          <td>
+                <code>27</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>cfg</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>configuration dict in case you want to use a custom configuration, see <a href="#easymms.models.asr.ASRModel.transcribe--Constants.CFG">CFG</a></p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.Union">Union</span>[<span title="typing.List">List</span>[str], <span title="typing.List">List</span>[dict]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of transcription text in the same order as input files</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/models/asr.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transcribe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">media_files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+               <span class="n">lang</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;eng&#39;</span><span class="p">,</span>
+               <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">align</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+               <span class="n">timestamps_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;segment&#39;</span><span class="p">,</span>
+               <span class="n">max_segment_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">27</span><span class="p">,</span>
+               <span class="n">cfg</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Transcribes a list of media files provided as inputs</span>
+
+<span class="sd">    :param media_files: list of media files (video/audio), in whichever format supported by ffmpeg</span>
+<span class="sd">    :param lang: the language of the media</span>
+<span class="sd">    :param device: Pytorch device (`cuda`, `cpu` or `tpu`)</span>
+<span class="sd">    :param align: if True the alignment model will be used to generate the timestamps, otherwise you will get raw text from the MMS model</span>
+<span class="sd">    :param timestamps_type: Once of (`segment`, `word` or `char`) if `align` is set to True, this will be used to fragment the raw text</span>
+<span class="sd">    :param max_segment_len: the maximum length of the fragmented segments</span>
+<span class="sd">    :param cfg: configuration dict in case you want to use a custom configuration, see [CFG](#Constants.CFG)</span>
+
+<span class="sd">    :return: List of transcription text in the same order as input files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">processed_files</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_media_files</span><span class="p">(</span><span class="n">media_files</span><span class="p">)</span>
+    <span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="c1"># clone Fairseq</span>
+    <span class="n">easymms_utils</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_URL</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_DIR</span><span class="p">)</span>
+    <span class="n">fairseq_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_DIR</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fairseq_dir</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">fairseq_dir</span><span class="p">)</span>
+    <span class="c1"># import</span>
+    <span class="kn">from</span> <span class="nn">examples.speech_recognition.new.infer</span> <span class="kn">import</span> <span class="n">hydra_main</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">fairseq.data.data_utils_fast</span> <span class="kn">import</span> <span class="p">(</span>
+            <span class="n">batch_by_size_fn</span><span class="p">,</span>
+            <span class="n">batch_by_size_vec</span><span class="p">,</span>
+            <span class="n">batch_fixed_shapes_fast</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># we need to build the extension</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Bulding required extensions, this may take a while ...&quot;</span><span class="p">)</span>
+        <span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">run_setup</span>
+        <span class="n">run_setup</span><span class="p">(</span><span class="nb">str</span><span class="p">((</span><span class="n">constants</span><span class="o">.</span><span class="n">FAIRSEQ_DIR</span> <span class="o">/</span> <span class="s1">&#39;setup.py&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()),</span> <span class="n">script_args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;build_ext&#39;</span><span class="p">,</span> <span class="s1">&#39;--inplace&#39;</span><span class="p">],</span>
+                  <span class="n">stop_after</span><span class="o">=</span><span class="s1">&#39;run&#39;</span><span class="p">)</span>
+
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_setup_tmp_dir</span><span class="p">(</span><span class="n">processed_files</span><span class="p">)</span>
+    <span class="c1"># edit cfg</span>
+    <span class="k">if</span> <span class="n">cfg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;task&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;decoding&#39;</span><span class="p">][</span><span class="s1">&#39;results_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir_path</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">][</span><span class="s1">&#39;gen_subset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lang</span><span class="si">}</span><span class="s1">:dev&#39;</span>
+        <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+                <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cpu&#39;</span>
+        <span class="k">if</span> <span class="n">device</span> <span class="o">==</span> <span class="s1">&#39;cuda&#39;</span><span class="p">:</span>
+            <span class="k">pass</span>  <span class="c1"># default</span>
+        <span class="k">elif</span> <span class="n">device</span> <span class="o">==</span> <span class="s1">&#39;cpu&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;common&#39;</span><span class="p">][</span><span class="s1">&#39;cpu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">device</span> <span class="o">==</span> <span class="s1">&#39;tpu&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;common&#39;</span><span class="p">][</span><span class="s1">&#39;tpu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">cfg</span> <span class="o">=</span> <span class="n">OmegaConf</span><span class="o">.</span><span class="n">structured</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">wer</span> <span class="o">=</span> <span class="n">hydra_main</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+    <span class="c1"># get results: will just read from hypo.word as I don&#39;t want to change fairseq repo to get the hypo array</span>
+    <span class="n">hypo_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir_path</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">HYPO_WORDS_FILE</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hypo_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">hw</span><span class="p">:</span>
+        <span class="n">hypos</span> <span class="o">=</span> <span class="n">hw</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reorder_decode</span><span class="p">(</span><span class="n">hypos</span><span class="p">)</span>
+        <span class="n">transcripts</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">outputs</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">align</span><span class="p">:</span>
+        <span class="n">align_model</span> <span class="o">=</span> <span class="n">AlignmentModel</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">transcripts</span><span class="p">)):</span>
+            <span class="n">media_file</span> <span class="o">=</span> <span class="n">processed_files</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">transcript</span> <span class="o">=</span> <span class="n">easymms_utils</span><span class="o">.</span><span class="n">get_transcript_segments</span><span class="p">(</span><span class="n">transcripts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">timestamps_type</span><span class="p">,</span> <span class="n">max_segment_len</span><span class="o">=</span><span class="n">max_segment_len</span><span class="p">)</span>
+            <span class="n">segments</span> <span class="o">=</span> <span class="n">align_model</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="n">media_file</span><span class="o">=</span><span class="n">media_file</span><span class="p">,</span>
+                                         <span class="n">transcript</span><span class="o">=</span><span class="n">transcript</span><span class="p">,</span>
+                                         <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span>
+                                         <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">transcripts</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="easymms.models.asr.ASRModel.get_supported_langs" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">get_supported_langs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h5>
+<div class="highlight"><pre><span></span><code><span class="n">get_supported_langs</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Helper function to get supported ISO 693-3 languages by the ASR model
+Source <a href="https://dl.fbaipublicfiles.com/mms/misc/language_coverage_mms.html">https://dl.fbaipublicfiles.com/mms/misc/language_coverage_mms.html</a></p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of supported languages</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/models/asr.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">get_supported_langs</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper function to get supported ISO 693-3 languages by the ASR model</span>
+<span class="sd">    Source &lt;https://dl.fbaipublicfiles.com/mms/misc/language_coverage_mms.html&gt;</span>
+<span class="sd">    :return: list of supported languages</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">MMS_LANGS_FILE</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;ASR&#39;</span><span class="p">]]</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="easymms.constants" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">easymms.constants</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+  
+      <p>Constants</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.PACKAGE_NAME" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">PACKAGE_NAME</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">PACKAGE_NAME</span> <span class="o">=</span> <span class="s1">&#39;easymms&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.LOGGING_LEVEL" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">LOGGING_LEVEL</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">LOGGING_LEVEL</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.PACKAGE_DATA_DIR" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">PACKAGE_DATA_DIR</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">PACKAGE_DATA_DIR</span> <span class="o">=</span> <span class="n">user_data_dir</span><span class="p">(</span><span class="n">PACKAGE_NAME</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.TTS_DIR" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">TTS_DIR</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">TTS_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">PACKAGE_DATA_DIR</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;tts&#39;</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.TTS_MODELS_BASE_URL" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">TTS_MODELS_BASE_URL</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">TTS_MODELS_BASE_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;https://dl.fbaipublicfiles.com/mms/tts/&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.VITS_URL" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">VITS_URL</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">VITS_URL</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/jaywalnut310/vits&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.VITS_DIR" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">VITS_DIR</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">VITS_DIR</span> <span class="o">=</span> <span class="n">TTS_DIR</span> <span class="o">/</span> <span class="s1">&#39;vits&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.FAIRSEQ_URL" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">FAIRSEQ_URL</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">FAIRSEQ_URL</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/facebookresearch/fairseq&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.FAIRSEQ_DIR" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">FAIRSEQ_DIR</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">FAIRSEQ_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">PACKAGE_DATA_DIR</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;fairseq&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.CFG" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">CFG</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">CFG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="s2">&quot;audio_finetuning&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;labels&quot;</span><span class="p">:</span> <span class="s2">&quot;ltr&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;decoding&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;nbest&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;unitlm&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;lmpath&quot;</span><span class="p">:</span> <span class="s2">&quot;???&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lexicon&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;beam&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;beamthreshold&quot;</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span>
+        <span class="s2">&quot;beamsizetoken&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;wordscore&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;unkweight&quot;</span><span class="p">:</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+        <span class="s2">&quot;silweight&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;lmweight&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;viterbi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;unique_wer_file&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;results_path&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;common&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;no_progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;log_interval&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;log_format&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;log_file&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;aim_repo&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;aim_run_hash&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;tensorboard_logdir&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;wandb_project&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;azureml_logging&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;tpu&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;bf16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;memory_efficient_bf16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;memory_efficient_fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;fp16_no_flatten_grads&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;fp16_init_scale&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="s2">&quot;fp16_scale_window&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;fp16_scale_tolerance&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;on_cpu_convert_precision&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;min_loss_scale&quot;</span><span class="p">:</span> <span class="mf">0.0001</span><span class="p">,</span>
+        <span class="s2">&quot;threshold_loss_scale&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;amp&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;amp_batch_retries&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;amp_init_scale&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="s2">&quot;amp_scale_window&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;user_dir&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;empty_cache_freq&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;all_gather_list_size&quot;</span><span class="p">:</span> <span class="mi">16384</span><span class="p">,</span>
+        <span class="s2">&quot;model_parallel_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;quantization_config_path&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;profile&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;reset_logging&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;suppress_crashes&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;use_plasma_view&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;plasma_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/tmp/plasma&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;common_eval&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;post_process&quot;</span><span class="p">:</span> <span class="s2">&quot;letter&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;quiet&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;model_overrides&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;results_path&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;checkpoint&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;save_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;checkpoints&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;restore_file&quot;</span><span class="p">:</span> <span class="s2">&quot;checkpoint_last.pt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;continue_once&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;finetune_from_model&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;reset_dataloader&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;reset_lr_scheduler&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;reset_meters&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;reset_optimizer&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;optimizer_overrides&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;save_interval&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;save_interval_updates&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;keep_interval_updates&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;keep_interval_updates_pattern&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;keep_last_epochs&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;keep_best_checkpoints&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;no_save&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;no_epoch_checkpoints&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;no_last_checkpoints&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;no_save_optimizer_state&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;best_checkpoint_metric&quot;</span><span class="p">:</span> <span class="s2">&quot;loss&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;maximize_best_checkpoint_metric&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;patience&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;checkpoint_suffix&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;checkpoint_shard_count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;load_checkpoint_on_all_dp_ranks&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;write_checkpoints_asynchronously&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;model_parallel_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;distributed_training&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;distributed_world_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;distributed_num_procs&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;distributed_rank&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;distributed_backend&quot;</span><span class="p">:</span> <span class="s2">&quot;nccl&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;distributed_init_method&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;distributed_port&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;distributed_no_spawn&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;ddp_backend&quot;</span><span class="p">:</span> <span class="s2">&quot;legacy_ddp&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ddp_comm_hook&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bucket_cap_mb&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="s2">&quot;fix_batches_to_gpus&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;find_unused_parameters&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;gradient_as_bucket_view&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;fast_stat_sync&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;heartbeat_timeout&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;broadcast_buffers&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;slowmo_momentum&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;slowmo_base_algorithm&quot;</span><span class="p">:</span> <span class="s2">&quot;localsgd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;localsgd_frequency&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;nprocs_per_node&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_model_parallel&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_balance&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_devices&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_chunks&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_encoder_balance&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_encoder_devices&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_decoder_balance&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_decoder_devices&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;pipeline_checkpoint&quot;</span><span class="p">:</span> <span class="s2">&quot;never&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;zero_sharding&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;memory_efficient_fp16&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;tpu&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;no_reshard_after_forward&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;fp32_reduce_scatter&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;cpu_offload&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;use_sharded_state&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;not_fsdp_flatten_parameters&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;num_workers&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;skip_invalid_size_inputs_valid_test&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">4000000</span><span class="p">,</span>
+        <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;required_batch_size_multiple&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;required_seq_len_multiple&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;dataset_impl&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;data_buffer_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;train_subset&quot;</span><span class="p">:</span> <span class="s2">&quot;train&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;valid_subset&quot;</span><span class="p">:</span> <span class="s2">&quot;valid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;combine_valid_subsets&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;ignore_unused_valid_subsets&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;validate_interval&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;validate_interval_updates&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;validate_after_updates&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;fixed_validation_seed&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;disable_validation&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;max_tokens_valid&quot;</span><span class="p">:</span> <span class="mi">4000000</span><span class="p">,</span>
+        <span class="s2">&quot;batch_size_valid&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;max_valid_steps&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;curriculum&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;gen_subset&quot;</span><span class="p">:</span> <span class="s2">&quot;eng:dev&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;num_shards&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;shard_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;grouped_shuffling&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;update_epoch_batch_itr&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;update_ordered_indices_seed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;is_ax&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.HYPO_WORDS_FILE" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">HYPO_WORDS_FILE</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">HYPO_WORDS_FILE</span> <span class="o">=</span> <span class="s1">&#39;hypo.word&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.ALIGNMENT_MODEL_URL" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">ALIGNMENT_MODEL_URL</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">ALIGNMENT_MODEL_URL</span> <span class="o">=</span> <span class="s2">&quot;https://dl.fbaipublicfiles.com/mms/torchaudio/ctc_alignment_mling_uroman/model.pt&quot;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.ALIGNMENT_DICTIONARY_URL" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">ALIGNMENT_DICTIONARY_URL</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">ALIGNMENT_DICTIONARY_URL</span> <span class="o">=</span> <span class="s2">&quot;https://dl.fbaipublicfiles.com/mms/torchaudio/ctc_alignment_mling_uroman/dictionary.txt&quot;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.UROMAN_URL" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">UROMAN_URL</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">UROMAN_URL</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/isi-nlp/uroman&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.UROMAN_DIR" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">UROMAN_DIR</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">UROMAN_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">PACKAGE_DATA_DIR</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;uroman&#39;</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="easymms.constants.MMS_LANGS_FILE" class="doc doc-heading">
+        <span class="doc doc-object-name doc-attribute-name">MMS_LANGS_FILE</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">MMS_LANGS_FILE</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+    <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;mms_langs.json&quot;</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="easymms.utils" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">easymms.utils</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+  
+      <p>Utils functions</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="easymms.utils.download_file" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">download_file</span>
+
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">download_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Helper function to download models and other required files</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>url</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>URL of the file</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>download_dir</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Where to store the file</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>chunk_size</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>size of the download chunk</p>
+            </div>
+          </td>
+          <td>
+                <code>1024</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Absolute path of the downloaded model</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">download_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper function to download models and other required files</span>
+<span class="sd">    :param url: URL of the file</span>
+<span class="sd">    :param download_dir: Where to store the file</span>
+<span class="sd">    :param chunk_size: size of the download chunk</span>
+
+<span class="sd">    :return: Absolute path of the downloaded model</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">download_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">download_dir</span><span class="p">)</span> <span class="o">/</span> <span class="n">file_name</span>
+    <span class="c1"># check if the file is already there</span>
+    <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File &#39;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&#39; already exists in </span><span class="si">{</span><span class="n">download_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># download it</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content-length&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+        <span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Downloading File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">,</span>
+                            <span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="p">,</span>
+                            <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;iB&#39;</span><span class="p">,</span>
+                            <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                            <span class="n">unit_divisor</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">,</span> <span class="n">progress_bar</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
+                    <span class="n">size</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model downloaded to </span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># error download, just remove the file</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">e</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="o">.</span><span class="n">absolute</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="easymms.utils.download_and_extract" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">download_and_extract</span>
+
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">download_and_extract</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">extract_to</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Downloads and unzips a zip folder
+Will be used to download uroman source code</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>url</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the file URL</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>extract_to</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>extract path</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;.&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>None</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">download_and_extract</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">extract_to</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Downloads and unzips a zip folder</span>
+<span class="sd">    Will be used to download uroman source code</span>
+<span class="sd">    :param url: the file URL</span>
+<span class="sd">    :param extract_to: extract path</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading file &#39;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; and extracting to &#39;</span><span class="si">{</span><span class="n">extract_to</span><span class="si">}</span><span class="s2">&#39; ...&quot;</span><span class="p">)</span>
+    <span class="n">http_response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.zip&#39;</span><span class="p">):</span>
+        <span class="n">zipfile</span> <span class="o">=</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">http_response</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+        <span class="n">zipfile</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">extract_to</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tar</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">http_response</span><span class="o">.</span><span class="n">read</span><span class="p">()),</span> <span class="s2">&quot;r:gz&quot;</span><span class="p">)</span>
+        <span class="n">tar</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">extract_to</span><span class="p">)</span>
+        <span class="n">tar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="easymms.utils.get_lang_info" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">get_lang_info</span>
+
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">get_lang_info</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns more info about a language,</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>lang</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the ISO 693-3 language code</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>dict of info</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_lang_info</span><span class="p">(</span><span class="n">lang</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns more info about a language,</span>
+<span class="sd">    :param lang: the ISO 693-3 language code</span>
+<span class="sd">    :return: dict of info</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">MMS_LANGS_FILE</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">lang</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="easymms.utils.get_transcript_segments" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">get_transcript_segments</span>
+
+
+</h3>
+<div class="highlight"><pre><span></span><code><span class="n">get_transcript_segments</span><span class="p">(</span>
+    <span class="n">transcript</span><span class="p">,</span> <span class="n">t_type</span><span class="o">=</span><span class="s2">&quot;segment&quot;</span><span class="p">,</span> <span class="n">max_segment_len</span><span class="o">=</span><span class="mi">24</span>
+<span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>A helper function to fragment the transcript to segments
+<Quick implementation, Not perfect (barely works), needs improvements></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>transcript</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>results of the ASR model</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>t_type</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>one of [<code>word</code>, <code>segment</code>, <code>char</code>]</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;segment&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>max_segment_len</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the maximum length of the segment</p>
+            </div>
+          </td>
+          <td>
+                <code>24</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of segments</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>easymms/utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_transcript_segments</span><span class="p">(</span><span class="n">transcript</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">t_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;segment&#39;</span><span class="p">,</span> <span class="n">max_segment_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">24</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A helper function to fragment the transcript to segments</span>
+<span class="sd">    &lt;Quick implementation, Not perfect (barely works), needs improvements&gt;</span>
+
+<span class="sd">    :param transcript: results of the ASR model</span>
+<span class="sd">    :param t_type: one of [`word`, `segment`, `char`]</span>
+<span class="sd">    :param max_segment_len: the maximum length of the segment</span>
+<span class="sd">    :return: list of segments</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">t_type</span> <span class="o">==</span> <span class="s1">&#39;word&#39;</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">t_type</span> <span class="o">==</span> <span class="s1">&#39;char&#39;</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_segment_len</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">c</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">+=</span> <span class="n">c</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+            <span class="n">new_word</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">word</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_segment_len</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">word</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">new_word</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://github.com/abdeladim-s"  target="_blank" rel="noopener">Abdeladim S.</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/abdeladim-s/easymms" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
