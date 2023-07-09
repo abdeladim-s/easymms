@@ -155,6 +155,7 @@ class AlignmentModel:
         :return: list of transcription timestamps
         """
         # import
+        import os
         cwd = os.getcwd()
         os.chdir(constants.FAIRSEQ_DIR)
         from examples.mms.data_prep.align_and_segment import get_alignments
